@@ -21,7 +21,7 @@ html, body {
 ========================================================== */
 .header {
     padding: 6px 18px;
-    background: #2b6fb3; /*  #2b6fb3  */
+    background: #ffffff; /*  #2b6fb3  */
     color: #fff;
 }
 
@@ -302,4 +302,5 @@ body.dark-mode {
 body, .sidebar, .content, .header, .slide {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
  
