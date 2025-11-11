@@ -21,7 +21,7 @@ html, body {
 ========================================================== */
 .header {
     padding: 6px 18px;
-    background: #ffffff; /*  #2b6fb3  */
+    background: #2b6fb3; /*  #2b6fb3  */
     color: #fff;
 }
 
@@ -304,3 +304,4 @@ body, .sidebar, .content, .header, .slide {
 }
 
  
+
