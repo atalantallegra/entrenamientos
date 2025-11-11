@@ -1,0 +1,305 @@
+
+/* ==========================================================
+    BASE GENERAL
+========================================================== */
+:root {
+    --alto-header: 50px; /* alto del header para cálculos */
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* sin scroll general */
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+/* ==========================================================
+    HEADER
+========================================================== */
+.header {
+    padding: 6px 18px;
+    background: #2b6fb3; /*  #2b6fb3  */
+    color: #fff;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+#modoBtn {
+    padding: 6px 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+/* ==========================================================
+    LAYOUT PRINCIPAL
+========================================================== */
+.container {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    padding: 18px;
+}
+
+.sidebar,
+.content {
+    box-sizing: border-box;
+    overflow: auto;
+    height: calc(100dvh - var(--alto-header) - 20px);
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+
+.sidebar {
+    width: 240px;
+    padding: 12px;
+}
+
+.content {
+    flex: 1;
+    padding: 16px;
+}
+
+/* ==========================================================
+    BOTONES
+========================================================== */
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 6px 6px 6px 0;
+    border-radius: 8px;
+    background: #2b6fb3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+    .btn:hover {
+        background: #1f5590;
+    }
+
+    .btn.secondary {
+        background: #6c757d;
+    }
+
+        .btn.secondary:hover {
+            background: #555d63;
+        }
+
+/* Centrar botones del sidebar */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+    .controls .btn {
+        flex: 0 0 auto;
+    }
+
+/* ==========================================================
+    PREGUNTAS (SLIDES)
+========================================================== */
+.slide {
+    border: 1px solid #ddd;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s;
+}
+
+    .slide:hover {
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .slide h3 {
+        margin: 0 0 8px 0;
+        font-size: 1.1rem;
+        color: #1a1a1a;
+    }
+
+/* ==========================================================
+    TEXTO Y RESPUESTAS
+========================================================== */
+.small {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.4;
+}
+
+label {
+    display: block;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* ==========================================================
+    RESULTADOS
+========================================================== */
+.correct {
+    border-color: #28a745;
+    background: #eaf8ee;
+}
+
+.incorrect {
+    border-color: #dc3545;
+    background: #fdecec;
+}
+
+.feedback {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.respuesta.oculto {
+    display: none;
+}
+
+/* ==========================================================
+    TEMAS Y CHECKBOXES
+========================================================== */
+#temas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 0px; /*4px 8px*/
+}
+
+.tema-item {
+    display: inline-block;
+    width: 70px;
+    margin: 6px 0px; /*6px 4px*/
+}
+
+.badge {
+    background: #e9ecef;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+/* ==========================================================
+    GRAFICO DE RESULTADOS
+========================================================== */
+#graficoResultados {
+    max-width: 200px;
+    max-height: 200px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* ==========================================================
+    TEMA OSCURO MANUAL (botón 🌙 / ☀️)
+========================================================== */
+body.dark-mode {
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+    body.dark-mode .header {
+        background: #234a74;
+        color: #fff;
+    }
+
+    body.dark-mode .sidebar,
+    body.dark-mode .content {
+        background: #2a2a2a;
+        color: #e6e6e6;
+        box-shadow: 0 2px 6px rgba(0,0,0,.4);
+    }
+
+    body.dark-mode .btn {
+        background: #3a7bd5;
+        color: #fff;
+    }
+
+        body.dark-mode .btn.secondary {
+            background: #555;
+        }
+
+    body.dark-mode .slide {
+        background: #333;
+        border-color: #444;
+    }
+
+    body.dark-mode .correct {
+        background: #2e5333;
+        border-color: #4caf50;
+    }
+
+    body.dark-mode .incorrect {
+        background: #5b2c2c;
+        border-color: #e74c3c;
+    }
+
+    body.dark-mode .badge {
+        background: #444;
+        color: #ddd;
+    }
+
+    /* Forzar color claro en modo oscuro */
+    body.dark-mode,
+    body.dark-mode .header,
+    body.dark-mode .sidebar,
+    body.dark-mode .content,
+    body.dark-mode .slide,
+    body.dark-mode .small,
+    body.dark-mode label,
+    body.dark-mode .feedback,
+    body.dark-mode .badge,
+    body.dark-mode .tema-item,
+    body.dark-mode .controls,
+    body.dark-mode .extra-controls,
+    body.dark-mode .sidebar *,
+    body.dark-mode .content * {
+        color: #ffffff !important;
+    }
+
+/* ==========================================================
+    RESPONSIVE (pantallas pequeñas)
+========================================================== */
+@media (max-width: 1000px) {
+    html, body {
+        overflow: auto; /* permite scroll general */
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+        order: -1; /* sidebar arriba */
+    }
+
+    .content {
+        width: 100%;
+        height: auto;
+        overflow: visible;
+    }
+}
+
+body, .sidebar, .content, .header, .slide {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+ 
