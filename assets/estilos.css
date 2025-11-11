@@ -270,6 +270,33 @@ body.dark-mode {
     body.dark-mode .content * {
         color: #ffffff !important;
     }
+/* ===== Selector de examen ===== */
+#examSelector {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #222;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#examSelector:focus {
+  outline: none;
+  border-color: #2b6fb3;
+}
+
+/* ===== Modo oscuro ===== */
+body.dark-mode #examSelector {
+  background-color: #2b2b2b;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+body.dark-mode #examSelector option {
+  background-color: #2b2b2b;
+  color: #fff;
+}
 
 /* ==========================================================
     RESPONSIVE (pantallas pequeñas)
@@ -304,4 +331,5 @@ body, .sidebar, .content, .header, .slide {
 }
 
  
+
 
